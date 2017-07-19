@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <style>
+            .a{
+                color: navy;
+            }
+            .b{
+                color:maroon;
+            }
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    
+    
+    $(function(){
+        //1.jQuery text() method 
+       // alert($("#list3").text()); //getting text from DOM element
+        //$("#para3").text("This is text from text() method");//setting text from DOM element
+      
+      //2.jQuery html() method
+      //alert($("#para3").html());
+     // $("#list3").html("<li>New List Item5</li>");
+    // $("p:last").text("This is last Paragraph");
+
+        // var newpara="<p>This is a new para</p>";
+        // $("#para3").html(newpara);
+
+        //3.jQuery Append() method is used to insert the contents at the 
+        //end of selected elements
+
+      //  $("p").append(" With some Dynamic text");
+        //$("p:last").appendTo("p:first");
+
+        //4.jQuery prepend()
+        //$("p").prepend("Prepend Text ")
+
+        //5.jQuery Attributes attr() method
+        //alert($("p").attr());
+        //$("a").attr("target","_blank");
+        //$("a").removeAttr("href");
+
+        //6.jQuery wrap() method is used to wrap an html structure around the selected elements.
+        //$("p").wrap("<div style='border:3px solid red'></div>");
+       // $("p").wrapAll("<div style='border:3px solid red'></div>");
+
+       //7.jQuery empty() method
+      // $("ul").empty();
+
+      //8.jQuery remove() removes selected elements from the DOM as 
+      //well as everything inside it
+     // $("ul").remove();
+
+     //9.jquery clone()
+     //$("#para3").clone().appendTo("body");
+
+     //10.jQuery replaceWith() method
+    // $("#para3").replaceWith("<h1>New Heading</h1>");
+
+    //11.jQuery replaceAll() method
+   // $("<li class='c'>List Item</li>").replaceAll("li");
+
+   //12.jQuery find()
+  $("ul").find("span").css({"border":"3px solid red","color":"green"});
+
+//13.jQuery val() method
+     alert($("input:text").val());
+
+    });
+
+
+
+
+</script>
+
+    </head>
+    <body>
+        <ul id="list3">
+            <li class="a">List Item 1</li>
+            <li>List Item 2</li>
+            <li class="b">List Item 3</li>
+            <li class="b">List Item 4</li>
+        </ul>
+
+        <a href="http:www.google.com">Google.com</a>
+        <p class="a">This is paragraph1!!</p>
+
+        <p class="b" id="mypara" >This is paragraph1 2 !</p>
+
+        <p id="para3" class="a" lang="en-us">  This is paragraph 3!!</p>
+
+        <p class="b">This is paragraph 4 !!</p>
+
+        <p>This is para without class</p>
+         <ul>
+            <li class="a">List Item 1</li>
+            <li class="a">List Item 2</li>
+            <li class="b">List Item 3</li>
+            <li class="b"> <span>List Item 4<span></li>
+        </ul>
+
+        <span>Span 1</span>
+            <b>This is bold</b>
+            <span>Span 2</span>
+            <span>Span 3</span>
+        <div>
+            <button>Button within div</button>
+        </div>
+        <p>ABCD</p>
+          <div>
+            <button>Button1</button>
+            <button>Button2</button>
+            
+        </div>
+        <input type="text" value="Google">
+    </body>
+</html>

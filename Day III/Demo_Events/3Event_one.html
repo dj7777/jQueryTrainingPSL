@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <style>
+       div{
+           background-color: yellow;
+           color:white;
+           font-size: xx-large;
+           font-family: 'Times New Roman';
+           margin: 5px;
+           width:100px;
+           height:100px;
+       }
+     .highlighted{
+         background-color: maroon;
+     }
+
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script
+  src="http://code.jquery.com/jquery-1.6.1.js"
+  integrity="sha256-Du92qVg6bHoet2TTP+N2v+GGHfefq4LCw/XRYYPoIBY="
+  crossorigin="anonymous"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    
+ 
+    $(function(){
+        
+       // $("div").on("click",function(){
+           //When using one() method , that event handler function is urn only once for 
+           //each element.
+           $("div").one("click",function(){
+            alert("Only once "+$(this).text());
+            $(this).css({
+                background :"red",
+                color:"white",
+                fontSize:"xx-large",
+                fontWeight:"bold"
+            });
+        })
+
+
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+     <p>Click on each div</p>
+     <div>div 1</div>
+     <div>div 2</div>
+     <div>div 3</div>
+     <div>div 4</div>
+     <div>div 5</div>
+     <div>div 6</div>
+    </body>
+</html>

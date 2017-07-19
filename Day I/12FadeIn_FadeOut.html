@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+         div{
+             width:250px;
+             height:190px;
+             background-color:yellow;
+             color:maroon;
+         }
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    
+ 
+    $(function(){
+      /* JQuery Effects :
+                1.Hide and Show
+                2.SlideUp and SlideDown
+                3.FadeIn and FadeOut
+      */
+
+        //Hide and Show Effect
+        $("#fadeOut").click(function(){
+            $("#mydiv").fadeOut(6000,function(){
+                alert("fadeOut Effect is completed!!")
+            });
+
+            // normal , fast, slow , very fast, very slow
+        });
+
+        $("#fadeIn").click(function(){
+            $("#mydiv").fadeIn(2000,function(){
+                alert("fadeIn effect is completed");
+            });
+        });
+
+        $("#fadetoggle").click(function(){
+            $("#mydiv").fadeToggle(2000,function()
+            {
+                alert("Fade Toggle Completed");
+            });
+        });
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+        <button id="fadeOut">Fade Out</button>
+        <button id="fadeIn">Fade In</button>
+        <button id="fadetoggle">Fade Toggle!</button>
+         <div id="mydiv">
+             This is myDiv!!
+         </div>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+
+<html>
+    <head>
+        <style>
+        #div1{
+            background-color: red;
+            width:150px;
+            height:70px;
+            padding: 0.5em;
+        }
+        #div2{
+            background-color: yellow;
+            height:150px;
+            width:250px;
+            padding: 0.5em;
+        }
+
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script
+  src="http://code.jquery.com/jquery-1.6.1.js"
+  integrity="sha256-Du92qVg6bHoet2TTP+N2v+GGHfefq4LCw/XRYYPoIBY="
+  crossorigin="anonymous"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>-->
+<!--<script src="jquery.watermark.js"></script>-->
+    </head>
+    <body>
+        <script>
+           $(function(){
+
+            $("#div1").draggable();
+
+           // $("#div2").droppable();
+
+           $("#div2").droppable({
+               drop : function(event,ui)
+               {
+                   $(this).find("p").html("Dropped").css('fontSize','xx-large');
+               }
+           });
+           });
+                
+        
+   
+
+    </script>
+       <div id="div1">
+           <p>Drag me please!</p>
+       </div>
+       <div id="div2">
+           <p>Drop Here!</p>
+       </div>
+    
+    </body>
+</html>

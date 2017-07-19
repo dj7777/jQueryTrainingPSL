@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="css/style.css" rel="Stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.watermark.min.js"></script>
+</head>
+<body>
+    <center>
+        <div style="display:inline-block;" align="left">
+            <br />
+            <br />
+            <span class="Title" style="font-size: 50px;">jQuery Watermark Plugin</span>
+            <br />
+            <br />
+            Watermark is a beautiful hint within the input elements to explain the field data
+            for users, and this jQuery plugin will do this for you easily
+            <br />
+            <br />
+            <br />
+            <span class="Title">What this Can Do? </span>
+            <br />
+            <ul>
+                <li>Each Watermark element have its own watermark text and CSS class</li>
+                <li>This plugin will not affect the form submission</li>
+                <li>Simple API, let you change value, watermark text and CSS class at runtime, and get
+                    jQuery watermark element, and the original element</li>
+                <li>Password field intelligent support</li>
+                <li>Very light weight — minified version ~ 2.3 KB</li>
+            </ul>
+            <br />
+            <span class="Title">Examples</span>
+            <br />
+            <br />
+            <table class="ExamplesTable" cellpadding="5" cellspacing="5">
+                <tr>
+                    <td>
+                        <span class="FormLabel">Simple Watermark Input :</span>
+                    </td>
+                    <td>
+                        <input id="simpleWatermark" name="simpleWatermark" type="text" class="input" />
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="FormLabel">Dynamic Set/Get Value :</span>
+                    </td>
+                    <td>
+                        <input id="setValueWatermark" name="setValueWatermark" type="text" class="input" />
+                    </td>
+                    <td>
+                        <input id="setValueButton" type="button" value="Set Value" class="button" />
+                        <input id="resetValueButton" type="button" value="Reset Value" class="button" />
+                        <input id="showValueButton" type="button" value="Show Value" class="button" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="FormLabel">Dynamic CSS Class Name :</span>
+                    </td>
+                    <td>
+                        <input id="cssClassName" name="cssClassName" type="text" class="input" />
+                    </td>
+                    <td>
+                        <input id="changeClassButton" type="button" value="Change CSS Class" class="button" />
+                        <input id="resetClassButton" type="button" value="Reset CSS Class" class="button" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="FormLabel">Dynamic Watermark Text :</span>
+                    </td>
+                    <td>
+                        <input id="watermarkText" name="watermarkText" type="text" class="input" />
+                    </td>
+                    <td>
+                        <input id="changeWatermarkText" type="button" value="Change Watermark Text" class="button" />
+                        <input id="resetWatermarkText" type="button" value="Reset Watermark Text" class="button" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="FormLabel">Password Support :</span>
+                    </td>
+                    <td>
+                        <input id="passwordSupport" name="passwordSupport" type="password" class="input" />
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <span class="Title">Help?</span>
+            <br />
+            <br />
+            <ul>
+                <li>Initialization:
+                    <ul>
+                        <li>Constructor: <b>$("#InputId").watermark({ watermarkText: "Watermark Text", watermarkClassName:
+                            "CSS Class Name" });</b></li>
+                        <li>Parameters:
+                            <ul>
+                                <li>watermarkText: To set as input field text when it's empty</li>
+                                <li>watermarkClassName: To set as input field CSS Class when it's empty</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>data:
+                    <ul>
+                        <li>watermarkElement: To Get the container for all methods to modify the watermark appearance
+                            (ex: <b>$watermarkElement.data("watermarkElement")</b>).</li>
+                    </ul>
+                </li>
+                <li>Methods:
+                    <ul>
+                        <li>val: To Set/Get the value, as the jQuery val() method (ex: <b>$watermarkElement.data("watermarkElement").val("New
+                            Value")</b>).</li>
+                        <li>watermarkText: To Set/Get the watermarkText at runtime (ex: <b>$watermarkElement.data("watermarkElement").watermarkText("New
+                            Watermark Text")</b>).</li>
+                        <li>watermarkClassName: To Set/Get the watermark CSS Class Name at runtime (ex: <b>$watermarkElement.data("watermarkElement").watermarkClassName("New
+                            CSS Class Name")</b>).</li>
+                        <li>getWatermarkElement: To Get the watermark element as jQuery object (ex: <b>$watermarkElement.data("watermarkElement").getWatermarkElement()</b>).</li>
+                        <li>getElement: To Get the original element as jQuery object (ex: <b>$watermarkElement.data("watermarkElement").getElement()</b>).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </center>
+    <script type="text/javascript">
+        $(function () {
+            $("#simpleWatermark").watermark({ watermarkText: "Simple Watermark" });
+            var $setValueWatermark = $("#setValueWatermark").watermark({ watermarkText: "Set Value" });
+            var $cssClassName = $("#cssClassName").watermark({ watermarkText: "CSS Class Name" });
+            $("#passwordSupport").watermark({ watermarkText: "Password" });
+            var $watermarkText = $("#watermarkText").watermark({ watermarkText: "Watermark Text" });
+
+            $("#changeClassButton").click(function () {
+                $cssClassName.data("watermarkElement").watermarkClassName("blueWatermark");
+                return false;
+            });
+
+            $("#resetClassButton").click(function () {
+                $cssClassName.data("watermarkElement").watermarkClassName("watermark");
+                return false;
+            });
+
+            $("#changeWatermarkText").click(function () {
+                $watermarkText.data("watermarkElement").watermarkText("New Watermark Text");
+                return false;
+            });
+
+            $("#resetWatermarkText").click(function () {
+                $watermarkText.data("watermarkElement").watermarkText("Watermark Text");
+                return false;
+            });
+
+            $("#setValueButton").click(function () {
+                $setValueWatermark.data("watermarkElement").val("New Value");
+                return false;
+            });
+
+            $("#resetValueButton").click(function () {
+                $setValueWatermark.data("watermarkElement").val("");
+                return false;
+            });
+
+            $("#showValueButton").click(function () {
+                alert($setValueWatermark.data("watermarkElement").val());
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

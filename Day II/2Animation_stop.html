@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <style>
+        img{
+            height:150px;
+            width:150px;
+            position:relative; /*Required to move the element*/
+        }
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    
+ 
+    $(function(){
+        //start the animation
+      $(".start-btn").click(function(){
+           $("img").animate({left:"+=150"},2000);
+       })
+
+       // stop running animation
+       $(".stop-btn").click(function(){
+            $("img").stop();
+       });
+            
+        //start animation in opposite direction
+
+        $(".back-btn").click(function(){
+            $("img").animate({left:"-=150"},2000);
+        });
+
+        //Reset to default
+        $(".reset-btn").click(function(){
+            $("img").animate({left:"0"},"fast");
+        })
+      
+      
+});
+
+    
+
+
+
+</script>
+
+    </head>
+    <body>
+       <button class="start-btn">Start</button>
+       <button class="stop-btn">Stop</button>
+       <button class="back-btn">Back</button>
+       <button class="reset-btn">Reset</button>
+<p>
+       <img src="Images/Jellyfish.jpg">
+</p>
+    </body>
+</html>

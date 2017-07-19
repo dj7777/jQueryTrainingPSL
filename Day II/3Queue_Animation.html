@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <style>
+        #box1{
+            margin: 6px;width:80px;height:80px;
+            position: absolute;left:20px;top:70px;
+            background: peachpuff;display: none;}
+    #box2{
+            margin: 6px;width:80px;height:80px;
+            position: absolute;left:60px;top:100px;
+            background: aqua;display: none;}
+    p{color: red};
+        
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>-->
+<script>
+    
+ 
+    $(function(){
+
+        var queue=$("#q").queue("chain");
+
+        $("#show").click(function(){
+            $("p").text("Queue Length is :"+$("#q").queue("chain").length);
+            $("#q").dequeue("chain");  
+        });
+
+        //start animation queue
+        //Execute the next function on the queue for matched elements
+       // $("#q").dequeue("chain");
+    
+     // next() method retrieves the next sibling only if it matches that selector   
+     $("#q").queue("chain",function(next){
+        $("#box2").show("slow",function(){ next();});
+     });
+
+     $("#q").queue("chain",function(next){
+        $("#box1").animate({left:60},{duration:1000,queue:false,complete:next});
+     });
+
+     $("#q").queue("chain",function(next){
+        $("#box1").animate({top:"200"},1500,function() {next();});
+     });
+
+     $("#q").queue("chain",function(next){
+        $("#box2").animate({top:"200"},1500,function(){next();});
+     });
+
+     $("#q").queue("chain",function(next){
+        $("#box2").animate({left:"200"},1500,function(){next();});
+     });
+
+     $("#q").queue("chain",function(next){
+        $("#box1").show("slow",function(){next();});
+     });
+
+      
+});
+
+    
+
+
+
+</script>
+
+    </head>
+    <body>
+      
+            <button id="show">Start Animation</button>
+
+            <p></p>
+
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="q"></div>
+
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <style>
+            .a{
+                color: navy;
+            }
+            .b{
+                color:maroon;
+            }
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(function(){
+        //element selector
+        // $('p').css("border","3px solid red");
+
+        //universal selector 
+        // $('*').css("border","3px dotted green");
+
+        //Id Selector
+      //  $("#para3").css("border","3px solid red");
+
+      //class selector
+      //  $(".a").css("border","3px solid red");
+
+       // $("#list1").css("border","3px solid red");
+      // $("p#para3.a").css("border","3px solid red");
+    //  $("p.b").css("border","3px solid red").css("background-color","yellow");
+    $("#list1 .a").css("border","3px solid red");
+
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+        <ul id="list1">
+            <li class="a">List Item 1</li>
+            <li class="a">List Item 2</li>
+            <li class="b">List Item 3</li>
+            <li class="b">List Item 4</li>
+        </ul>
+
+        <p class="a">This is paragraph1!!</p>
+
+        <p class="b">This is paragraph1 2 !</p>
+
+        <p id="para3" class="a"> This is paragraph 3!!</p>
+
+        <p class="b">This is paragraph 4 !!</p>
+         <!--<ul>
+            <li class="a">List Item 1</li>
+            <li class="a">List Item 2</li>
+            <li class="b">List Item 3</li>
+            <li class="b">List Item 4</li>
+        </ul>-->
+    </body>
+</html>

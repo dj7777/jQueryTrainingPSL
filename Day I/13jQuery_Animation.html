@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <style>
+        img{
+            position: relative;  /*Required to move element*/
+        }
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    
+ 
+    $(function(){
+      $("button").click(function(){
+        $("img").animate({
+            left:500
+        });
+      });
+
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+       <button>Start Animation</button>
+
+       <p>
+        <img src="Images/Jellyfish.jpg" height="250px" width="250px">
+       </p>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <style>
+       .normal{
+           background-color: yellow;
+           color:white;
+           font-size: xx-large;
+           font-family: 'Times New Roman';
+           margin: 5px;
+           width:300px;
+           height:200px;
+       }
+     .highlighted{
+         background-color: maroon;
+     }
+
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script
+  src="http://code.jquery.com/jquery-1.6.1.js"
+  integrity="sha256-Du92qVg6bHoet2TTP+N2v+GGHfefq4LCw/XRYYPoIBY="
+  crossorigin="anonymous"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    
+ 
+    $(function(){
+        
+        //1.
+        // $("#evtTarget").bind("mouseover",highlight);
+        // $("#evtTarget").bind("mouseleave",highlight);
+
+        //2
+        //  $("#evtTarget").bind("mouseover mouseleave",highlight);
+
+        // $("#evtTarget").bind("click",function(){
+        //     // $("#evtTarget").unbind("mouseover",highlight);
+        //     // $("#evtTarget").unbind("mouseleave",highlight);
+
+        //     $("#evtTarget").unbind("mouseover mouseleave",highlight);
+        //     $("#evtTarget").html("<p>events are removed</p>");
+
+        // });
+
+        //Helper Methods - hover , click etc
+         $("#evtTarget").hover(highlight,highlight);
+
+        $("#evtTarget").click(function(){
+            $("#evtTarget").unbind("mouseenter mouseleave",highlight);
+
+            $("#evtTarget").html("<p>events are removed</p>");
+
+        });
+
+        function highlight()
+        {
+            $("#evtTarget").toggleClass("highlighted")
+        }
+     
+
+
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+     <div id="evtTarget" class="normal">
+         Mouse over the div to see some effects!
+         Click on it to stop the effect
+     </div>
+
+    </body>
+</html>

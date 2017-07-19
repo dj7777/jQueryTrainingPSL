@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <style>
+            .a{
+                color: navy;
+            }
+            .b{
+                color:maroon;
+            }
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    
+    // Filters -Basic/Index filters, Attribute Filters, content filters
+    //Child filters, Visiability Filters, Form filters
+
+    //Attribute Filters
+    $(function(){
+        //$("p[class]").css("border","3px solid green");
+        //$("p[id=para3]").css("border","3px double maroon");
+
+        //id starting with "par"
+      //  $("p[id^=par]").css("border","3px dotted gray");
+
+      // id ending with "ra3"
+      //$("p[id$=ra3]").css("border","3px solid blue");
+
+      // id containing "ra"
+      //$("p[id*=ra]").css("border","3px dashed peachpuff");
+
+      // id starting with "par" and having lang contains en
+      $("p[id^=par][lang*=en]").css("background-color","gray");
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+        <ul id="list3">
+            <li class="a">List Item 1</li>
+            <li>List Item 2</li>
+            <li class="b">List Item 3</li>
+            <li class="b">List Item 4</li>
+        </ul>
+
+        <p class="a">This is paragraph1!!</p>
+
+        <p class="b" id="mypara" >This is paragraph1 2 !</p>
+
+        <p id="para3" class="a" lang="en-us">  This is paragraph 3!!</p>
+
+        <p class="b">This is paragraph 4 !!</p>
+
+        <p>This is para without class</p>
+         <ul>
+            <li class="a">List Item 1</li>
+            <li class="a">List Item 2</li>
+            <li class="b">List Item 3</li>
+            <li class="b">List Item 4</li>
+        </ul>
+        <div>
+            <button>Button within div</button>
+        </div>
+        <p></p>
+          <div>
+            <button>Button1</button>
+            <button>Button2</button>
+            <span>Span 1</span>
+            <b>This is bold</b>
+            <span>Span 2</span>
+            <span>Span 3</span>
+        </div>
+
+    </body>
+</html>

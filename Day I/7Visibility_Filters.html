@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <style>
+            .a{
+                color: navy;
+            }
+            .b{
+                color:maroon;
+            }
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    
+    // Filters -Basic/Index filters, Attribute Filters, content filters
+    //Child filters, Visiability Filters, Form filters
+
+    //Visibility Filters
+    $(function(){
+        $("button").click(function(){
+            $("div:hidden").css("background-color","yellow").show();
+        })
+
+        $("div:visible").click(function(){
+            $(this).css("background-color","yellow");
+        })
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+        <ul id="list3">
+            <li class="a">List Item 1</li>
+            <li>List Item 2</li>
+            <li class="b">List Item 3</li>
+            <li class="b">List Item 4</li>
+        </ul>
+
+        <p class="a">This is paragraph1!!</p>
+
+        <p class="b" id="mypara" >This is paragraph1 2 !</p>
+
+        <p id="para3" class="a" lang="en-us">  This is paragraph 3!!</p>
+
+        <p class="b">This is paragraph 4 !!</p>
+
+        <p>This is para without class</p>
+         <ul>
+            <li class="a">List Item 1</li>
+            <li class="a">List Item 2</li>
+            <li class="b">List Item 3</li>
+            <li class="b">List Item 4</li>
+        </ul>
+
+        <div style="display:none"> Invisible Div </div>
+        <div>
+            <button>Button within div</button>
+        </div>
+        <p></p>
+          <div>
+            <button>Button1</button>
+            <button>Button2</button>
+            <span>Span 1</span>
+            <b>This is bold</b>
+            <span>Span 2</span>
+            <span>Span 3</span>
+        </div>
+
+    </body>
+</html>

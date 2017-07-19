@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <style>
+        .block{
+            background-color: red;
+            width:150px;
+            height:70px;
+            margin:10px;
+        }
+
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script
+  src="http://code.jquery.com/jquery-1.6.1.js"
+  integrity="sha256-Du92qVg6bHoet2TTP+N2v+GGHfefq4LCw/XRYYPoIBY="
+  crossorigin="anonymous"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    
+    $(function(){
+       
+        var url="http://code.jquery.com/color/jquery.color.js";
+        $.getScript(url, function(){
+            $("#go").click(function(){
+                $(".block").animate({
+                    backgroundColor:"rgb(255,180,180)"
+                },1000)
+                .delay(500)
+                .animate({
+                    backgroundColor:"olive"
+                },1000)
+                .delay(500)
+                .animate({
+                    backgroundColor:"#00f"
+                },1000);
+            });
+
+        });
+
+
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+        <button id="go"> Run </button>
+        <div class="block"></div>
+    
+    </body>
+</html>

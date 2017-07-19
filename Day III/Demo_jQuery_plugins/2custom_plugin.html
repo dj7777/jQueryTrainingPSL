@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <style>
+        .block{
+            background-color: red;
+            width:150px;
+            height:70px;
+            margin:10px;
+        }
+
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script
+  src="http://code.jquery.com/jquery-1.6.1.js"
+  integrity="sha256-Du92qVg6bHoet2TTP+N2v+GGHfefq4LCw/XRYYPoIBY="
+  crossorigin="anonymous"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+<script src="jquery.watermark.js"></script>
+    </head>
+    <body>
+        <script>
+            $.fn.greeting=function(){
+                this.css('color','green')
+                .css('fontSize','xx-large')
+                .css('fontWeight','bolder');
+            }
+        $(function(){
+
+            $("a").greeting();
+           
+        });
+   
+
+    </script>
+       <a href="https://www.google.com">Hello !</a> <br/>
+       <a href="">How are you</a>
+    
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <style>
+           #myDiv{
+               width:250px;
+               height:180px;
+               margin: 10px;
+               padding:20px;
+               background: purple;
+               color:white;
+               font-size: x-large;
+               font-weight: bolder;
+               border:5px solid yellow;
+               cursor:pointer;
+           }
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    
+    
+    $(function(){
+      $("#height").html($("#myDiv").height());
+      $("#width").html($("#myDiv").width());
+      $("#innerHeight").html($("#myDiv").innerHeight()); //including padding but not border
+      $("#innerWidth").html($("#myDiv").innerWidth()); 
+      $("#outerHeight").html($("#myDiv").outerHeight());  //including padding + border, margin optionally
+      $("#outerWidth").html($("#myDiv").outerWidth());
+      $("#offset").html($("#myDiv").offset().top+" ,"+$("#myDiv").offset().left);
+      $("#position").html($("#myDiv").position().top+","+$("#myDiv").position().left);
+      
+         
+         
+
+      
+
+    });
+
+
+
+
+</script>
+    </head>
+    <body>
+        <p>Using jQuery to compute element size and position </p>
+
+        <div id="myDiv"></div>
+
+        <div>
+            <span>Height : </span> <span id="height"></span>
+        </div>
+        <div>
+            <span>Width : </span> <span id="width"></span>
+        </div>
+         <div>
+            <span>innerHeight : </span> <span id="innerHeight"></span>
+        </div>
+        <div>
+            <span>innerWidth : </span> <span id="innerWidth"></span>
+        </div>
+           <div>
+            <span>outerHeight : </span> <span id="outerHeight"></span>
+        </div>
+        <div>
+            <span>offSet : </span> <span id="offset"></span>
+        </div>
+
+        <div>
+            <span>position : </span> <span id="position"></span>
+        </div>
+    </body>
+</html>

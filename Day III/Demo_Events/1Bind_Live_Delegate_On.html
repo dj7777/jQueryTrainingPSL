@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <style>
+       div{
+           background-color: yellow;
+           color:white;
+           font-size: xx-large;
+           font-family: 'Times New Roman';
+           margin: 5px;
+       }
+       #members li{
+        border: 3px solid black;
+        margin: 5px;
+        width:300px;
+        text-align: center;
+       }
+
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script
+  src="http://code.jquery.com/jquery-1.6.1.js"
+  integrity="sha256-Du92qVg6bHoet2TTP+N2v+GGHfefq4LCw/XRYYPoIBY="
+  crossorigin="anonymous"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    
+ 
+    $(function(){
+        
+        //1 bind() : It doesn't work for elements that added dynamically 
+        // that matches the same selectors
+        // $("div").bind("click",function(){
+        //     alert("Div is clicked");
+        // })
+
+        //2 live() : jquery 1.4 to 1.8
+        /*
+            The .live() will work with dynamically added elements
+            Chaining is not properly supported
+            This can affect the performance if DOM is deep        
+        */
+
+        // $("div").live("click",function(){
+        //     alert("Div is clicked");
+        // });
+
+
+        //3.delegate()
+        /*
+            You have the option of choosing where to attach the selector/event info
+            chaining is also properly suppoted. 
+        */
+        // $(document).delegate("div","click",function(){
+        //     alert("div is clicked");
+        // });
+
+        // $("#members").delegate("li","click",function(){
+        //     alert($(this).text()+ "is clicked");
+        // });
+
+        $("#btnAdd").click(function(){
+            $("body").append("<div>Dynamically added Div</div>");
+        })
+
+        //4 on()
+        /*
+            Brings uniformality to the various event binding methods
+        */
+        //event chaining
+        $("#members").on("click","li",clicked)
+                    .on("mouseenter",enter)
+                    .on("mouseleave",leave);
+        function clicked()
+        {
+           // alert("Clicked "+$(this).text());
+          //  $("#btnAdd").off("click"); //remove an event handler
+          $("#members").off("click","li");
+        }
+        function enter()
+        {
+            //method chaining
+            $(this).css("background-color","red").css("color","white");
+        }
+        function leave()
+        {
+            $(this).css("background-color","blue").css("color","white");
+        }
+     
+
+
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+     <ul id="members">
+         <li>Item 1</li>
+           <li>Item 2</li>
+             <li>Item 3</li>
+               <li>Item 4</li>
+     </ul>
+
+     <div>Statically added Div !</div>
+
+     <div>This is Simple div</div>
+     <button id="btnAdd">Add Div !</button>
+    </body>
+</html>

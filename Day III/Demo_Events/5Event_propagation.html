@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <style>
+       div{
+           background-color: yellow;
+           color:maroon;
+           font-size: xx-large;
+           font-family: 'Times New Roman';
+           margin: 5px;
+           width:300;
+           height:300px;
+       }
+     .highlighted{
+         background-color: maroon;
+     }
+
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script
+  src="http://code.jquery.com/jquery-1.6.1.js"
+  integrity="sha256-Du92qVg6bHoet2TTP+N2v+GGHfefq4LCw/XRYYPoIBY="
+  crossorigin="anonymous"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    
+ 
+    $(function(){
+        
+        $("span").click(function(event){
+            event.stopPropagation();
+            alert("span is clicked");
+        });
+
+          $("p").click(function(){
+            alert("paragraph is clicked");
+        });
+          $("div").click(function(){
+            alert("div is clicked");
+        })
+      
+
+
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+   
+     <div style="background-color:gray" >
+            This is div.
+      <p style="background-color:orange" >This is para</p>
+     <span style="background-color:aqua">This is Span</span>
+     </div>
+
+    </body>
+</html>

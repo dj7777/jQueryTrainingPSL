@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <style>
+       div{
+           background-color: yellow;
+           color:maroon;
+           font-size: xx-large;
+           font-family: 'Times New Roman';
+           margin: 5px;
+           width:300;
+           height:300px;
+       }
+     .highlighted{
+         background-color: maroon;
+     }
+
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script
+  src="http://code.jquery.com/jquery-1.6.1.js"
+  integrity="sha256-Du92qVg6bHoet2TTP+N2v+GGHfefq4LCw/XRYYPoIBY="
+  crossorigin="anonymous"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script>
+    
+ 
+    $(function(){
+        
+       $("button:first").click(function(){
+            update($("span:first"));
+       });
+
+       $("button:last").click(function(){
+        $("button:first").trigger("click");
+        update($("span:last"));
+       });
+
+       function update(myspan)
+       {
+           var n=parseInt(myspan.text());
+           myspan.text(n+1);
+       }
+      
+
+
+    });
+
+
+
+</script>
+
+    </head>
+    <body>
+        <button>Button 1</button>
+        <button>Button 2</button>
+        <div><span>0</span> button #1 clicks!!</div>
+        <div><span>0</span> button #2 clicks!!</div>
+
+    
+
+    </body>
+</html>

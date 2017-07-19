@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+           .main{
+               width:250px;
+               height:180px;
+               margin: 10px;
+               padding:20px;
+               background: purple;
+               color:white;
+               font-size: x-large;
+               font-weight: bolder;
+               border:5px solid yellow;
+               cursor:pointer;
+           }
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    
+    
+    $(function(){
+       //addClass() method
+      // $("div").addClass("main");
+
+      //removeClass() method
+      //$("div").removeClass("main");
+
+      $("button").click(function(){
+          $("div").toggleClass("main");
+      })
+
+    });
+
+
+
+
+</script>
+    </head>
+    <body>
+      <div class="main">Have a nice Day!!!</div>
+
+      <div>Hello!!!</div>
+
+      <button>Toggle Class</button>
+
+
+    </body>
+</html>

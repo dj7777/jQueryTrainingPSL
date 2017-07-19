@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+        .block{
+            background-color: red;
+            width:150px;
+            height:70px;
+            margin:10px;
+        }
+
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!--<script
+  src="http://code.jquery.com/jquery-1.6.1.js"
+  integrity="sha256-Du92qVg6bHoet2TTP+N2v+GGHfefq4LCw/XRYYPoIBY="
+  crossorigin="anonymous"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+<script src="jquery.watermark.js"></script>
+    </head>
+    <body>
+        <script>
+        $(function(){
+
+            $("#date1").mask("99/99/9999",
+            {
+                placeholder: "mm/dd/yyyy",
+                completed:function(){
+                    alert("Entered Date :"+this.val());
+                }
+            })
+            $("#phone1").mask("(999)999-9999");
+            $("#prodkey1").mask("a*-999-a999");
+
+            $("img").watermark({
+                text :'Watermark Image',
+                textSize:50,
+                textWidth:400,
+                margin:50,
+                color:'white'
+            });
+
+        });
+   
+
+    </script>
+       <img src="Images/Jellyfish.jpg" width="300px" height="300px"/> <br/>
+
+       Date :- <input type="text" id="date1"/><br/>
+       Phone :- <input type="text" id="phone1"/> <br/>
+       Product Key : <input type="text" id="prodkey1"/>
+    
+    </body>
+</html>

@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <style>
+            .a{
+                color: navy;
+            }
+            .b{
+                color:maroon;
+            }
+        </style>
+        <!--my own web server  -->
+<!--<script src="jquery-3.2.1.js"></script>-->
+
+<!--CDN-->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    
+    
+    $(function(){
+        //1.$.data() : This utility attaches data to or gets data from selected item
+
+        // $("#btn1").click(function(){
+        //     $("div").data("greeting","Hello jQuery");
+        //     $("div").text($("div").data("greeting"));
+        // });
+
+        // $("#btn2").click(function(){
+        //     alert($("div").data("greeting"));
+        //     $("div").text("");
+        // });
+
+        // var str="           string has lots of spaces before and after          ";
+        // $("#original").html("Original String :'"+str+"'");
+        // $("#trimmed").html("$.trim()'ed' :"+$.trim(str)+"'");
+
+        // $("#btn4").click(function(){
+        //         var elems=document.getElementsByTagName("h1");
+               
+        //         var arr=jQuery.makeArray(elems);
+        //         //  alert(arr[0]);
+        //         arr.reverse();
+        //         $(arr).appendTo(document.body);
+        // });
+
+        var noarr=[10,20,30];
+
+        function Person()
+        {
+            this.Id=100,
+            this.Name="Sachin",
+            this.City="Pune"
+        }
+
+        var p=new Person();
+        //with array
+        // $.each(noarr,function(index,value){
+        //     alert(index+':'+value);
+        // })
+
+        //With the object
+        // $.each(p,function(index,value){
+        //     alert(index+' :'+value);
+        // });
+
+        // $("#btn3").one("click",function(){
+        //     $("#div1").append((new Date).getTime()+'<br/>');
+        //     $("#div2").append($.now()+'<br/>');
+        // })
+
+        alert($.isNumeric(100000000000));
+        alert($.isNumeric(Infinity));
+
+    });
+
+
+
+
+</script>
+
+    </head>
+    <body>
+       <button id="btn1">Attach some data!</button> <br/>
+
+       <button id="btn2">Get Attached Data</button> <br/>
+
+       <div style="height:50px;width:300px;background-color:gray;font-size:x-large"></div>
+
+       <!--trim()-->
+       <pre id="original"></pre>
+       <pre id="trimmed"></pre>
+
+       <!--.now()-->
+       <button id="btn3">Click!</button>
+       <div id="div1"></div>
+       <br/>
+       <div id="div2"></div>
+       <br/>
+
+
+       <!--.makeArray()-->
+       <button id="btn4"> Make Array and Reverse!</button> <br/>
+
+       <h1>First</h1>
+       <h1>Second</h1>
+       <h1>Third</h1>
+       <h1>Fourth</h1>
+
+    </body>
+</html>
